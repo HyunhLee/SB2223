@@ -1,0 +1,51 @@
+
+:root{
+    --stage : ${endPointConfig.styleBot};
+}
+
+.vestMask{
+    mask-image: url("http://localhost:3000/mask/topMaskWide.png");
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-image: url("http://localhost:3000/mask/topMaskWide.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+}
+
+.outerMask{
+    mask-image: url("http://localhost:3000/mask/outerMask.png");
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-image: url("http://localhost:3000/mask/outerMask.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+}
+
+.dressMask{
+    mask-image: url("http://localhost:3000/mask/topMask.png");
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-image: url("http://localhost:3000/mask/topMask.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+}
+
+
+.topMask{
+    mask-image: url("http://localhost:3000/mask/topMask.png");
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-image: url("http://localhost:3000/mask/topMask.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+}
+
+
+.hatMask{
+    mask-image: url("http://localhost:3000/mask/hat_mask.png");
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-image: url("http://localhost:3000/mask/hat_mask.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+}

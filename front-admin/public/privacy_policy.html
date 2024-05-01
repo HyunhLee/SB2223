@@ -1,0 +1,829 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>스타일봇 APP 약관</title><style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+            color: rgb(55, 53, 47);
+        }
+    }
+
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+
+    mark {
+        background-color: transparent;
+    }
+
+    .indented {
+        padding-left: 1.5em;
+    }
+
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+
+    @page {
+        margin: 1in;
+    }
+
+    .collection-content {
+        font-size: 0.875rem;
+    }
+
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .column {
+        padding: 0 1em;
+    }
+
+    .column:first-child {
+        padding-left: 0;
+    }
+
+    .column:last-child {
+        padding-right: 0;
+    }
+
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+
+    table {
+        border-left: none;
+        border-right: none;
+    }
+
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+
+    ul > li {
+        list-style: disc;
+    }
+
+    ul.to-do-list {
+        text-indent: -1.7em;
+    }
+
+    ul.to-do-list > li {
+        list-style: none;
+    }
+
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+
+    ul.toggle > li {
+        list-style: none;
+    }
+
+    ul {
+        padding-inline-start: 1.7em;
+    }
+
+    ul > li {
+        padding-left: 0.1em;
+    }
+
+    ol {
+        padding-inline-start: 1.6em;
+    }
+
+    ol > li {
+        padding-left: 0.2em;
+    }
+
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+    }
+
+    .simple-table-header {
+        background: rgb(247, 246, 243);
+        color: black;
+        font-weight: 500;
+    }
+
+    time {
+        opacity: 0.5;
+    }
+
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+
+    img.icon {
+        border-radius: 3px;
+    }
+
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+    }
+
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+
+    p > .user {
+        opacity: 0.5;
+    }
+
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+
+    code {
+        color: #eb5757;
+    }
+
+    .code {
+        padding: 1.5em 1em;
+    }
+
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+
+    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .highlight-default {
+        color: rgba(55, 53, 47, 1);
+    }
+    .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(145, 145, 142, 1);
+    }
+    .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(187, 132, 108, 1);
+    }
+    .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(215, 129, 58, 1);
+    }
+    .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 148, 51, 1);
+    }
+    .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(108, 155, 125, 1);
+    }
+    .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(91, 151, 189, 1);
+    }
+    .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(167, 130, 195, 1);
+    }
+    .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(205, 116, 159, 1);
+    }
+    .highlight-red {
+    }
+    .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .block-color-default {
+    }
+    .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(145, 145, 142, 1);
+    }
+    .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(187, 132, 108, 1);
+    }
+    .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(215, 129, 58, 1);
+    }
+    .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 148, 51, 1);
+    }
+    .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(108, 155, 125, 1);
+    }
+    .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(91, 151, 189, 1);
+    }
+    .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(167, 130, 195, 1);
+    }
+    .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(205, 116, 159, 1);
+    }
+    .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(225, 111, 100, 1);
+    }
+    .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+    .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+    .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+    .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+    .select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+    .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+    .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+    .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+    .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+    .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+
+</style></head><body><article id="6554b0f8-d958-4459-8e41-02f0bde95567" class="page sans"><p id="8266b430-f7f2-43cc-99fb-176f14c27096" class="">스타일봇 이용자</p><p id="8e36d7d3-df1c-4dc2-9d2b-dc36d61e8cb1" class="">
+    개인정보 처리방침</p><p id="12eafbfd-b712-46a8-8b1e-d81f9609ce29" class="">
+    주식회사 스타일봇(이하 회사라 합니다)는 이용자의 개인정보를 보호하고 이와 관련된 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보 처리방침을 수립·공개합니다.</p><p id="6fb36470-5a89-4e98-a043-53fd6a3229d9" class="">
+</p><p id="e0ea397e-29c6-4720-a0b2-8519264c3d6f" class="">제 1 조 [개인정보의 처리목적]
+    회사는 다음 각 호의 목적으로 이용자의 개인정보를 수집 및 이용합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며,
+    이용 목적이 변경되는 경우에는 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.
+    앱 또는 웹 회원 가입 및 관리 :
+    회원제 서비스 제공에 따른 개인식별, 가입의사 확인, 이용약관 위반 회원에 대한 이용제한 조치, 가입 및 가입횟수 제한, 서비스 부정 이용 제재, 비인가 사용 방지,
+    고충 처리 및 분쟁 조정을 위한 기록 보존, 고지사항 전달, 회원탈퇴 의사의 확인
+    스타일봇 서비스 제공 및 신규서비스 개발 :
+    신규 서비스 개발 및 맞춤 서비스 제공, 인구통계학적 특성에 따른 서비스 제공 및 광고 게재, 서비스의 유효성 확인, 이벤트·광고성 정보 및 참여 기회 제공, 접속빈도 파악,
+    회원의 서비스 이용에 대한 통계, 만14세 미만 아동의 정보수집 방지, 부정이용방지
+    고충처리 :
+    민원인 신원 확인, 민원사항 확인, 사실조사를 위한 연락·통지, 처리결과 통보
+    서비스 제공을 위한 계약의 이행 :
+    이용자가 상품을 구매할 경우, 주문을 위한 본인인증, 주문 및 결제의 이행, 재화의 배송, 간편결제 서비스의 등록 및 이용, 기기 간 주문 정보의 동기화 등
+     
+    제 2 조 [처리하는 개인정보의 항목]
+    회사는 다음 각 호의 개인정보를 처리하고 있습니다.
+     
+    수집 목적
+    구분
+    수집 시기 및 항목
+    [회원 관리]</p><ul id="71df0256-f57c-47f4-ac64-54a2f99f3558" class="bulleted-list"><li style="list-style-type:disc">회원제 서비스 제공에 따른 개인 식별</li></ul><ul id="d97bae7a-69d7-4a10-9c16-d8a9f81cb7d0" class="bulleted-list"><li style="list-style-type:disc">가입의사 확인</li></ul><ul id="2c74186a-aace-4668-aff4-635e1df15182" class="bulleted-list"><li style="list-style-type:disc">이용약관 위반 회원에 대한 이용제한 조치</li></ul><ul id="aa03f8a3-351f-42a6-b22a-4864bb7403d5" class="bulleted-list"><li style="list-style-type:disc">가입 및 가입 횟수 제한, 서비스 부정 이용 제재</li></ul><ul id="a7f9944d-d3ee-4b50-b2be-596b104fe054" class="bulleted-list"><li style="list-style-type:disc">비인가 사용 방지</li></ul><ul id="e0328ad7-341c-49a9-b214-332ae732f0c5" class="bulleted-list"><li style="list-style-type:disc">원활한 고객 상담</li></ul><ul id="7abba992-c17f-47b7-beb0-db4938291af4" class="bulleted-list"><li style="list-style-type:disc">고지사항 전달</li></ul><ul id="f9514ee5-a187-4f88-bf40-daa2a6ffce1f" class="bulleted-list"><li style="list-style-type:disc">고충 처리 및 분쟁 조정을 위한 기록 보존</li></ul><ul id="32761626-8dd3-4fcc-a381-4c2535c6cce8" class="bulleted-list"><li style="list-style-type:disc">회원탈퇴 의사의 확인
+    필수 수집
+    회원 가입 시</li></ul><ul id="0943d0cd-054c-4d7e-b50f-cac4fd72857a" class="bulleted-list"><li style="list-style-type:disc">아이디 (이메일)</li></ul><ul id="19260bb4-381d-4bdf-942f-587fc37050d1" class="bulleted-list"><li style="list-style-type:disc">비밀번호</li></ul><ul id="53a9c254-2091-4d4c-92e0-2cb1d13369bb" class="bulleted-list"><li style="list-style-type:disc">휴대폰번호
+    [서비스 제공]</li></ul><ul id="225f5435-5e50-4901-be22-67ee63232f02" class="bulleted-list"><li style="list-style-type:disc">회원의 정상적인 서비스 이용</li></ul><ul id="f1075ec4-8e9a-4e91-90ee-d625de47df43" class="bulleted-list"><li style="list-style-type:disc">신규 서비스 개발</li></ul><ul id="71f14701-1ac0-4e2c-ba6c-9975f3fce8fb" class="bulleted-list"><li style="list-style-type:disc">개인화 된 서비스 제공 및 추천/광고 게재</li></ul><ul id="522c87fe-0c63-4148-bdc4-2ba6ca5fc1e6" class="bulleted-list"><li style="list-style-type:disc">서비스 유효성 확인</li></ul><ul id="ba77e6d4-7c69-4b25-9e04-a61b4272a982" class="bulleted-list"><li style="list-style-type:disc">이벤트/광고성 정보 및 참여 기회 제공</li></ul><ul id="ca75726d-a39c-4451-939c-2f60b3e7e004" class="bulleted-list"><li style="list-style-type:disc">회원의 서비스 이용에 대한 통계</li></ul><ul id="fbe0d31c-b92e-4043-a32f-c8292e6afc5f" class="bulleted-list"><li style="list-style-type:disc">만14세 미만 아동의 정보수집 방지</li></ul><ul id="e5eaae34-ebd1-453f-8d28-a578f1e63aaa" class="bulleted-list"><li style="list-style-type:disc">부정 이용 방지</li></ul><ul id="66bd9830-ded4-4269-9e87-826cdb4fb6d1" class="bulleted-list"><li style="list-style-type:disc">고충처리
+    (민원인 신원 및 민원사항 확인, 사실 조사를 위한 연락/통지, 처리결과 통보)
+    필수 수집
+    서비스 이용 시</li></ul><ul id="5ee70904-2186-4743-b623-f97cc2c03242" class="bulleted-list"><li style="list-style-type:disc">아이디 (이메일)</li></ul><ul id="ff7bd1c5-2728-4496-8434-42304aaca589" class="bulleted-list"><li style="list-style-type:disc">휴대폰번호</li></ul><ul id="5ad2e8fe-275a-4813-ad7f-ceec4a2e71b2" class="bulleted-list"><li style="list-style-type:disc">기기 정보 (기기 모델/ID, 운영체제 버전 정보)</li></ul><ul id="8000be74-60fe-4458-9abe-71692a8fdfbc" class="bulleted-list"><li style="list-style-type:disc">쿠키, 방문일시, 브라우저 종류</li></ul><ul id="e3e9c022-2207-447b-a553-b3ecf1e2f144" class="bulleted-list"><li style="list-style-type:disc">서비스 이용 기록</li></ul><ul id="e6b7e2fc-5d74-4cb0-a249-4aa4f0568725" class="bulleted-list"><li style="list-style-type:disc">부정 이용 기록</li></ul><ul id="80de84a8-fbbd-4e80-ada5-a704d52c5321" class="bulleted-list"><li style="list-style-type:disc">IP 주소
+    선택수집
+    서비스 이용 시</li></ul><ul id="9c351e31-c4cc-49a4-a4c2-ce347a1bbbad" class="bulleted-list"><li style="list-style-type:disc">나이
+    [서비스 제공 &gt; 광고성 정보 전송]</li></ul><ul id="9600c083-2c4c-43a2-a7b6-d6c0164546ef" class="bulleted-list"><li style="list-style-type:disc">광고성 정보 수신 동의 시, 광고(이벤트 정보 등) 전송 목적
+    선택 수집
+    가입/서비스 이용 시</li></ul><ul id="caa41139-3d04-456b-949a-b39c694c5fa8" class="bulleted-list"><li style="list-style-type:disc">이메일</li></ul><ul id="ff1e1433-c9ef-485d-b0f0-e6aa3a715461" class="bulleted-list"><li style="list-style-type:disc">휴대폰 번호
+    [주문 시 결제/계약의 이행]</li></ul><ul id="1e689d6b-f39d-44d7-a999-a2511e1d153c" class="bulleted-list"><li style="list-style-type:disc">주문 및 결제의 이행</li></ul><ul id="b0b07fd7-5974-4ea4-bf70-a6c789b21414" class="bulleted-list"><li style="list-style-type:disc">재화의 배송</li></ul><ul id="f9dbbafa-656f-43cb-bbc7-80fc1b8cb693" class="bulleted-list"><li style="list-style-type:disc">원활한 고객 상담 및 고충 처리
+    필수 수집
+    <mark class="highlight-red">결제 주문 시</mark></li></ul><ul id="747c85ae-dd46-4308-b64c-16ca2e590608" class="bulleted-list"><li style="list-style-type:disc">주문자 정보 (이름, 이메일, 아이디, 휴대폰번호)</li></ul><ul id="53d0304d-c001-4861-8259-0ee9b4359d92" class="bulleted-list"><li style="list-style-type:disc">수취인 정보 (이름, 전화번호/휴대폰번호, 수취인 주소)</li></ul><ul id="027cfb43-bea2-4d32-9e40-48783dc3d864" class="bulleted-list"><li style="list-style-type:disc">상품 구매 정보 (주문번호, 카드결제 정보 / 계좌 결제 정보)
+    선택 수집
+    <mark class="highlight-red">결제 환불계좌 등록 시</mark></li></ul><ul id="8382f67a-b5e3-4045-9755-e5046cea3bab" class="bulleted-list"><li style="list-style-type:disc">계좌 정보 (계좌주, 은행, 계좌번호)
+    [본인 인증 시]</li></ul><ul id="13cfaab6-2b4a-4df1-aa30-413adb0c0718" class="bulleted-list"><li style="list-style-type:disc">본인 인증을 위한 개인 식별
+    필수 수집
+    본인인증 시</li></ul><ul id="405b9b61-c49d-4112-876d-d49b726b15a1" class="bulleted-list"><li style="list-style-type:disc">이름</li></ul><ul id="116724e0-51f5-45db-ab98-0364292293d7" class="bulleted-list"><li style="list-style-type:disc">생년월일</li></ul><ul id="10ed445b-c68c-47c2-83f0-591225d17b96" class="bulleted-list"><li style="list-style-type:disc">성별</li></ul><ul id="9202d6b2-fe37-4b24-b19d-f2d5feb9d4d4" class="bulleted-list"><li style="list-style-type:disc">본인확인 연계정보 (CI)</li></ul><ul id="5206def8-cc76-4421-beca-3f6ff9b6e3ab" class="bulleted-list"><li style="list-style-type:disc">중복가입 회원정보 (DI)</li></ul><ul id="0b6e3b8b-b55e-4e16-9b84-d82d29e2bc6b" class="bulleted-list"><li style="list-style-type:disc">휴대폰번호 (휴대폰 인증 시)</li></ul><ul id="eadd922d-7520-4724-b157-a0a52290abd2" class="bulleted-list"><li style="list-style-type:disc">아이핀 번호 (아이핀 인증 시)
+    [간편 결제 서비스 이용 시]</li></ul><ul id="decc4ead-f9a5-4184-8b9b-1734b90951bc" class="bulleted-list"><li style="list-style-type:disc">간편결제 서비스 등록/이용</li></ul><ul id="eb4d313a-6f79-4a94-a408-3fc60a6477a7" class="bulleted-list"><li style="list-style-type:disc">주문 및 결제 서비스 이행
+    필수 수집
+    간편결제 서비스 이용 시</li></ul><ul id="a336e50e-fbd6-4b87-8752-31f490b0f22c" class="bulleted-list"><li style="list-style-type:disc">은행명</li></ul><ul id="68011765-aa46-4419-be0e-3da52b249f49" class="bulleted-list"><li style="list-style-type:disc">계좌번호</li></ul><ul id="40efb81f-f8d2-4ff0-9b2b-726f80b83e2e" class="bulleted-list"><li style="list-style-type:disc">간편 결제 비밀번호</li></ul><ul id="d653a16a-3967-415b-b18a-c2cfa6e72aa4" class="bulleted-list"><li style="list-style-type:disc">예금주명</li></ul><ul id="d81f3e9a-60f7-4f51-b8c3-d6bf1085a1ce" class="bulleted-list"><li style="list-style-type:disc">생년월일</li></ul><p id="071f39e1-4a45-479b-afe7-3300621e8840" class="">
+    제 3 조 [개인정보 수집방법]
+    ① 회원가입 및 서비스 이용 과정에서 이용자가 개인정보 수집에 대해 동의하고 직접 정보를 입력하는 경우, 회사는 해당 정보를 수집합니다.
+    ② 고객센터를 통한 상담 과정에서 웹 또는 앱페이지, 메일, 팩스, 전화 등 다양한 경로를 통하여 회사에 상담·문의하는 경우, 개인정보가 수집될 수 있습니다.
+    ③ 회사와 제휴한 외부 기업이나 단체로 부터 개인정보를 제공받을 수 있으며, 이러한 경우에는 제휴사에서 이용자에게 개인정보 제공 동의를 받아야 합니다.
+    ④ 회사의 서비스 이용과정에서 로그분석을 통해 생성정보가 수집될 수 있으며, 쿠키에 의한 정보 등이 자동수집될 수 있습니다.
+    ⑤ 서비스 이용 중 이벤트 응모 및 당첨을 통한 경품 수령 과정을 통해, 필요에 따라 이용자가 개인정보 수집에 대해 동의하고 직접 정보를 입력하는 경우 회사는 해당 정보를 수집합니다. </p><p id="4ed221db-d32c-4811-bc04-29e508f78fa6" class="">
+</p><p id="21f704ab-cd01-46f4-9d7b-8055101cda44" class="">제 4 조 [개인정보 자동수집 장치의 설치·운영 및 거부]
+    ① 회사는 이용자에게 특화된 맞춤서비스를 제공하기 위해서 이용자들의 정보를 수시로 저장하고 찾아내는 &#x27;세션(session)&#x27; 또는 &#x27;쿠키(cookie)&#x27; 등을 운용합니다.
+    세션 및 쿠키의 의미 : 세션이란 스타일봇 서비스를 제공하는데 이용되는 서버가 이용자의 접속 시간 동안 이용 정보를 서버에 저장하는 것을 의미하고,
+    쿠키란 웹 또는 앱을 운영하는 데 이용되는 서버가 이용자의 브라우저에 보내는 아주 작은 텍스트 파일로서 이용자의 컴퓨터 하드디스크에 저장되기도 하는 정보를 말합니다.
+    세션 및 쿠키의 사용 목적 :회사는 세션 및 쿠키를 이용자의 접속 빈도나 방문 시간, 서비스이용 패턴을 분석하여 개인 맞춤 서비스를 제공하고 서비스 만족도를 높이기 위한 목적으로 사용합니다.
+    또한 각종 이벤트 참여 및 타겟 마케팅 등의 목적으로 쿠키 및 세션 정보를 사용합니다.
+    세션 및 쿠키의 설정 거부 방법 : 이용자는 세션의 설치 및 설정에 대한 선택권을 가지지 않으나, 쿠키 설치 여부에 대한 선택권을 가지고 있습니다. 따라서,
+    이용자는 웹 브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.
+    이용자는 사용하는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.
+    ● 인터넷 익스플로러의 경우, 웹 브라우저 상단의 [도구]&gt;[인터넷 옵션]&gt;[개인정보]&gt;[고급] 메뉴를 통하여 쿠키 설정의 거부가 가능합니다.
+    ● Safari의 경우, MacOS 상단 좌측 메뉴바에서 [Safati]&gt;[환경설정]&gt;[보안]을 통하여 쿠키 허용여부를 선택할 수 있습니다.
+    ② 이용자가 쿠키 설치를 거부하는 경우 로그인이 필요한 일부 서비스 이용에 어려움이 있을 수 있습니다.</p><p id="3c1f87ba-423d-432d-b51f-bed0831e3d22" class="">
+    제5조 [접근권한에 대한 안내]
+    ① 회사는 모바일 앱 서비스를 위하여 아래와 같이 고객의 이동통신단말기 내 정보 및 기능에 접근·이용할 수 있습니다.
+    (필수) 기기 및 앱기록 : 기기식별 및 앱상태(버전)확인 목적
+    (선택) 카메라/마이크/사진: 구매 상품에 대한 리뷰 및 게시글 작성 시 파일 첨부(iOS)
+    외부 저장소: 구매 상품에 대한 리뷰 및 게시글 작성 시 파일 첨부(Android)
+    ② 필수 접근항목은 앱설치시 또는 최초 실행시 안내하며, 선택 접근항목은 해당 서비스 최초 이용시 별도의 동의를 받습니다.
+    선택 접근항목의 경우 운영체제의 버전에 따라 동의를 받는 방법이 다를 수 있으나, 접근을 거부하더라도 기본 서비스 이용에 제한이 없습니다.</p><p id="e6729765-af17-4adf-9e9b-164a9a75f73e" class="">
+    제 6 조 [개인정보 제3자 제공]
+    ① 회사는 이용자의 개인정보를 명시한 범위 내에서만 처리하며, 이용자의 동의 또는 법령의 특별한 규정이 있는 경우에만 제3자에게 개인정보를 제공합니다.
+    ② 회사는 결제(가칭) 서비스를 통하여 배송 등 거래 이행을 위하여 필요한 경우 이용자의 동의를 얻는 등 적법한 절차에 따라 아래와 같이 개인정보를 제공할 수 있습니다.</p><p id="fc343d0b-02a9-433a-bfae-440bf3c820f1" class="">제공받는 자: 배송상품 제공 업체
+    제공목적: 서비스 제공 (이용자가 구매한 제품의 배송, 고객상담, AS 등 불만 처리)
+    제공 정보: 성명, 휴대전화번호, 주소, 이메일, 상품구매정보(카드결제정보, 계좌정보(무통장 입금시)), 수취인정보(성명, 전화번호, 휴대전화번호, 수취인 주소)
+    보유기간: 서비스 제공 기간(관계법령의 규정에 의하여 보존할 필요가 있는 경우 및 사전 동의를 득한 경우 해당 보유 기간)
+     
+    제 7 조 [개인정보처리의 위탁] &gt; 추후 간편결제 및 시스템 추가시 위탁 내용 추가 하면서 관리
+    스타일봇은 서비스 제공 위하여 필요한 업무 중 일부를 다음과 같이 외부 업체에 위탁하고 있습니다.
+     
+    개인정보처리를 위탁 받는 자
+    업무내용
+    개인정보의 보유 및 이용 기간</p><p id="f09ef330-a753-41d6-9123-2fce37b6802a" class="">
+    (주)이니시스
+    결제처리(휴대폰, 무통장 입금, 신용카드, 기타 결제수단, 환불계좌 인증) 및 도용방지
+    회원 탈퇴시 혹은 위탁계약 종료시까지
+    단, 관계 법령의 규정에 따라 보존할 의무가 있으면 해당 기간 동안 보존</p><p id="cc9ce702-1367-4973-a9a8-a3908731928c" class="">
+    한국모바일인증(주)
+    본인인증
+    회원 탈퇴시 혹은 위탁계약 종료시까지
+    단, 관계 법령의 규정에 따라 보존할 의무가 있으면 해당 기간 동안 보존</p><p id="bc9321a7-973a-4bac-8bf4-90f15c0302ba" class="">
+</p><p id="36ac5e29-28cb-4ef8-8b7d-018b2b0dbe8f" class=""><mark class="highlight-red">다날</mark></p><p id="8388842a-9a72-4f6f-be27-b898b6fd6f24" class=""><mark class="highlight-red">본인인증 </mark></p><p id="4551dbeb-1f94-4de1-8cf2-154cb6bd5f0c" class=""><mark class="highlight-red">회원 탈퇴시 혹은 위탁계약 종료시까지
+    단, 관계 법령의 규정에 따라 보존할 의무가 있으면 해당 기간 동안 보존</mark></p><p id="c19d3028-2ace-4411-a129-7833a2174720" class="">
+</p><p id="60151e46-15a8-41f4-b553-9e579cbe4c71" class=""><mark class="highlight-red">주식회사 토스페이먼츠</mark></p><p id="b02464f6-8b1d-416f-8554-1169d5826365" class=""><mark class="highlight-red">결제처리(신용카드,기타 결제 수단, 환불 계좌 인증) 및 도용 방지
+     회원 탈퇴시 혹은 위탁계약 종료시까지
+    단, 관계 법령의 규정에 따라 보존할 의무가 있으면 해당 기간 동안 보존</mark></p><p id="bfba6b6f-7e1c-4195-84d0-67afb4716c65" class="">
+</p><p id="264ab078-faf5-446c-aa5a-325ae8af8fea" class="">
+    제 8 조 [개인정보 보유 및 이용기간]
+    ① 회사는 법령에 따른 개인정보 보유·이용기간 또는 이용자로부터 개인정보 수집시 동의받은 개인정보 보유·이용 기간 내에서 개인정보를 처리·보유합니다.
+    ② 회사의 개인정보 처리 및 보유기간은 다음과 같습니다.
+    회원가입 및 관리 : 회원탈퇴시까지. 다만, 다음 사유에 해당하는 경우에는 해당 사유 종료시까지
+    가. 관계 법령 위반에 따른 수사·조사 등이 진행 중인 경우에는 해당 수사·조사 종료시까지
+    나. 서비스 이용에 따른 채권·채무관계가 잔존하는 경우 정산시까지
+    관련 법령에 따라 보유하는 경우
+    가. 전자상거래법에 따른 표시·광고, 계약내용 및 이행 등 거래에 관한 기록
+    ●   표시·광고에 관한 기록 : 6월
+    ● 계약 또는 청약철회 등에 관한 기록: 5년
+    ● 대금결제 및 재화 등의 공급에 관한 기록 : 5년
+    ●   소비자 불만 또는 분쟁처리에 관한 기록 : 3년
+    나. 통신비밀보호법 제41조에 따른 통신사실확인자료 보관
+    ●   가입자 전기통신일시, 개시·종료 시간, 상대방 가입자번호, 사용도수 : 1년
+    ●   컴퓨터 통신, 인터넷 로그기록자료, 접속지 추적 자료 : 3개월
+    ③ 회사는 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제29조 제2항에 따라 장기간(1년 이상) 서비스 미이용자의 개인정보 보호를 위하여 다른 이용자의 개인정보와 분리하여 별도로 보관합니다.
+     
+    제 9 조 [개인정보의 파기 절차 및 방법]
+    ① 원칙적으로 이용자의 개인정보는 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기됩니다.
+    ② 이용자로부터 동의를 받은 개인정보는 보유기간이 경과하거나 처리 목적이 달성되었음에도 불구하고 다른 법령에 따라 보관하는 경우에는,
+    해당 개인정보를 별도의 데이터베이스로 옮기거나 보관장소를 달리하여 보존합니다.
+    ③ 개인정보의 파기 절차 및 방법은 다음과 같습니다.
+    회사는 파기 사유가 발생한 개인정보를 선정하고, 회사의 개인정보 보호책임자의 승인을 받아 해당 개인정보를 파기합니다.
+    회사는 다음 각 호의 방법으로 개인정보를 파기합니다.
+    가. 종이에 기록, 저장된 개인정보 : 분쇄기로 분쇄하거나 소각을 통하여 파기
+    나. 전자적 파일 형태로 저장된 개인정보: 기록을 재생할 수 없도록 로우레벨포맷(Low Level Format) 등 기술적 방법을 사용하여 삭제</p><p id="cb65203a-1b59-4bcd-9621-ecb34b866c78" class="">
+</p><p id="d134746d-83c5-425e-8a1d-af6e8b806620" class="">제 10 조 [이용자의 권리·의무 및 행사방법]
+    ① 이용자는 회사에 대하여 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.
+    개인정보 열람 요구
+    오류 등이 있을 경우 정정 요구
+    삭제 요구
+    처리정지 요구
+    ② 제1항에 따른 권리행사는 회사에 대하여 서면, 전화, 전자우편, 모사전송(FAX) 등을 통하여 할 수 있으며 회사는 이에 대하여 지체없이 조치합니다.
+    ③ 이용자가 회사에 대하여 개인정보 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 회사의 정정 또는 삭제가 완료될 때까지 당해 개인정보를 이용 또는 제공하지 않습니다.
+    ④ 이용자는 정보통신망법, 개인정보 보호법 등 관계 법령을 위반하여 회사가 처리하고 있는 이용자 본인 또는 타인의 개인정보, 사생활을 침해하여서는 안 됩니다.
+     
+    제 11 조 [만 14세 미만 아동의 개인정보 처리]
+    ① 회사는 만 14세 미만 아동의 개인정보를 수집하지 않습니다. 다만, 회사가 만 14세 미만 아동의 개인정보를 수집하는 상황이 발생하는 경우,
+    법정대리인은 해당 아동 해당 아동이 제공한 개인정보에 대한 열람 또는 오류의 정정을 요구할 수 있으며, 개인정보 수집·이용 또는 제공에 대한 동의를 철회할 수 있고,
+    동의 철회를 요청할 경우 지체 없이 탈퇴 처리하며 즉시 수집된 정보를 파기합니다.
+    ② 유선 또는 서면을 통하여 만 14세 미만 아동인 회원의 법정대리인이 열람, 증명을 요구하는 경우, 회사는 대리관계를 증명하는 위임장 및 인감증명서,
+    요청인 및 대리인의 신분증 사본 등의 증표를 제시 받아 해당 요구를 하는 자가 진정한 법정대리인인지 여부를 확인합니다.
+    ③ 회사는 법정대리인의 동의를 얻기 위해 수집한 법정 대리인의 개인정보를 해당 법정대리인의 동의 여부를 확인하는 목적 외의 용도로 이를 이용하거나 제 3자에게 제공하지 않습니다.
+     
+    제 12 조 [개인정보의 안전성 확보조치]
+    회사는 개인정보의 안전성 확보를 위하여 다음과 같은 조치를 취하고 있습니다.
+    관리적 조치 : 내부관리계획의 수립 및 시행, 정기적 직원 교육
+    기술적 조치 : 개인정보처리시스템 등의 접근권한 관리, 비밀번호의 암호화, 보안프로그램의 설치 등
+    물리적 조치 : 자료보관실의 접근통제
+     
+    제 13 조 [개인정보관리 책임자 및 담당자]
+    이용자는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 다음 각 호의 개인정보관리책임자 혹은 담당부서로 신고하실 수 있습니다.
+    회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.</p><ol type="1" id="ac4dfd00-9663-484a-9454-87c549151de6" class="numbered-list" start="1"><li>개인정보 보호ᆞ관리 책임자
+    이 름 : 허주일
+    전 화 : 010-3540-1373
+    직 위 : 이사
+    전자메일 : <a href="mailto:zooeel@naver.com">zooeel@naver.com</a></li></ol><ol type="1" id="098e9dd6-d2a1-4bdc-b9b5-8e14288650d9" class="numbered-list" start="2"><li>개인정보 보호 담당부서
+    부서명 : 기획팀
+    담당자 : 허주일
+    전 화 : 010-3540-1373
+    직 위 : 이사
+    전자메일 : <a href="mailto:zooeel@naver.com">zooeel@naver.com</a></li></ol><p id="2a3ea45b-4223-44ca-aa34-c209ae7d0245" class="">
+    제 14 조 [권익침해 구제 방법]
+    이용자는 다음 각 호의 기관에 대해 개인정보 침해에 대한 피해구제, 상담 등을 문의하실 수 있습니다. 아래의 기관은 회사와는 별개의 기관으로서, 회사의 자체적인 개인정보 불만처리,
+    피해구제 결과에 만족하지 못하시거나 보다 자세한 도움이 필요하시면 문의하여 주시기 바랍니다.</p><ol type="1" id="2d41fe93-6fa9-4552-8c45-5c91e99d5391" class="numbered-list" start="1"><li>개인정보 침해신고센터 (한국인터넷진흥원 운영)
+    소관업무: 개인정보 침해사실 신고, 상담 신청
+    홈페이지: <a href="http://privacy.kisa.or.kr/">privacy.kisa.or.kr</a>
+    전 화: (국번없이) 118주 소: (58324) 전남 나주시 진흥길 9(빛가람동 301-2) 3층 개인정보침해 신고센터</li></ol><ol type="1" id="28180619-4040-4aff-9a63-6f1a003e3ca0" class="numbered-list" start="2"><li>개인정보 분쟁조정위원회 (한국인터넷진흥원 운영)
+    소관업무: 개인정보 분쟁조정신청, 집단분쟁조정 (민사적 해결)
+    홈페이지: <a href="http://www.kopico.or.kr/">www.kopico.or.kr</a>
+    전 화: 1833-6972
+    주 소: 03171 서울특별시 종로구 세종대로 209 정부서울청사 4층 개인정보 분쟁조정위원회
+    대검찰청 사이버범죄수사단: 02-3480-3571 (<a href="http://cybercid.spo.go.kr/">cybercid.spo.go.kr</a>)
+    경찰청 사이버안전국: 182 (<a href="http://cyber.go.kr/">http://cyber.go.kr</a>)
+    정보보호마크인증위원회: 02-550-9531~2 (<a href="http://www.eprivacy.or.kr/">www.eprivacy.or.kr</a>)</li></ol><p id="5198f5f7-11c9-4213-af66-af1f8c462e30" class="">
+    제 15 조 [개인정보처리방침의 적용 제외]
+    회사는 이용자에게 홈페이지를 통하여 다른 웹사이트 또는 자료에 대한 링크를 제공할 수 있습니다.
+    이 경우 회사는 외부사이트 및 자료에 대하여 통제권이 없을 뿐만 아니라 이들이 개인정보를 수집하는 행위에 대하여 회사의 개인정보처리방침이 적용되지 않습니다.</p></details></li></ul><p id="6e505a05-a005-4471-a14c-7b88f5e23a93" class="">
+</p></div></article></body></html>
